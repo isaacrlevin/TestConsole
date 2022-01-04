@@ -54,7 +54,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o './publish/App_Data/Jobs/Continuous/webjob'
+        run: dotnet publish -c Release -o './publish/App_Data/Jobs/Continuous/webjob' -r win-x86 --self-contained true
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
